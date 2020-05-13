@@ -1,0 +1,3 @@
+FROM graphiteapp/graphite-statsd
+
+COPY  monitor_system.sh /etc/run_once

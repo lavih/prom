@@ -6,6 +6,8 @@ services:
       - "0.0.0.0:9090:9090"
     networks:
       - lavih
+    volumes:
+      - prometheus:/etc/prometheus
   graphite:
     image: hopsoft/graphite-statsd
     ports:
@@ -19,3 +21,5 @@ services:
       - lavih
 networks:
   lavih:
+volumes:
+  prometheus:

@@ -18,3 +18,16 @@
 8080	Graphite internal gunicorn port (without Nginx proxying).
 8125	statsd
 8126	statsd admin
+
+
+
+##################################################
+############## image: Prometheus #################
+##################################################
+### conf files: ###
+/etc/prometheus=prometheus config
+#### ports: ###
+9090      prometheus dashboard
+
+
+
