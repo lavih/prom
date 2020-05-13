@@ -1,3 +1,15 @@
+# github repos
 https://github.com/prometheus/prometheus
 https://github.com/graphite-project
 https://github.com/grafana/grafana
+
+
+#docs
+https://graphiteapp.org/
+https://grafana.com/
+https://prometheus.io/
+
+
+# docker images
+https://hub.docker.com/r/prom/prometheus
+https://hub.docker.com/r/graphiteapp/graphite-statsd
