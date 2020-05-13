@@ -23,9 +23,7 @@ services:
     networks:
       - lavih
   grafana:
-    build:
-      context: .
-      dockerfile: custom_grafana_dockerfile.yaml
+    image: grafana/grafana
     container_name: grafana
     ports:
       - "3000:3000"
