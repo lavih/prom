@@ -7,6 +7,7 @@ services:
       - "9090:9090"
     networks:
       - lavih
+      - host
     volumes:
       - prometheus:/etc/prometheus
   graphite:
@@ -32,5 +33,6 @@ services:
      - lavih
 networks:
   lavih:
+  host:
 volumes:
   prometheus:
