@@ -13,6 +13,7 @@ Building a Prometheus-Graphite-Grafana monitoring stack that will monitor the ho
 * Ubuntu 16.04
 * Docker -
 * Docker-Compose - installation process on installs.txt file
+* VirtualBox with vboxmanage cli tool in the running user's "path"
 
 ### Installing
 
