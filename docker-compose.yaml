@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "0.0.0.0:9090:9090"
+    networks:
+      - lavih
+
+networks:
+  lavih:
