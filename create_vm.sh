@@ -22,8 +22,9 @@
 MACHINENAME='ubntu16'
 
 # Download debian.iso
-if [ ! -f ./debian.iso ]; then
-    wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.9.0-amd64-netinst.iso -O debian.iso
+if [ ! -f ./ubuntu.iso ]; then
+    #wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.9.0-amd64-netinst.iso -O debian.iso
+    wget https://releases.ubuntu.com/16.04/ubuntu-16.04.6-desktop-amd64.iso -O ubuntu.iso
 fi
 
 #Create VM
@@ -37,7 +38,7 @@ VBoxManage createhd --filename `pwd`/$MACHINENAME/$MACHINENAME_DISK.vdi --size 8
 VBoxManage storagectl $MACHINENAME --name "SATA Controller" --add sata --controller IntelAhci
 VBoxManage storageattach $MACHINENAME --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium  `pwd`/$MACHINENAME/$MACHINENAME_DISK.vdi
 VBoxManage storagectl $MACHINENAME --name "IDE Controller" --add ide --controller PIIX4
-VBoxManage storageattach $MACHINENAME --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium `pwd`/debian.iso
+VBoxManage storageattach $MACHINENAME --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium `pwd`/ubuntu.iso
 VBoxManage modifyvm $MACHINENAME --boot1 dvd --boot2 disk --boot3 none --boot4 none
 
 #Enable RDP
