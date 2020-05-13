@@ -1,0 +1,20 @@
+##################################################
+############## image: Grapgite-statsd ############
+##################################################
+### conf files: ###
+/opt/graphite/conf=graphite config
+/opt/graphite/storage=graphite stats storage
+/etc/grafana=grafana config
+/etc/nginx=nginx config
+/opt/statsd=statsd config
+/etc/logrotate.d=logrotate config
+/var/log=log files
+#### ports: ###
+80	nginx
+2003	carbon receiver - plaintext
+2004	carbon receiver - pickle
+2023	carbon aggregator - plaintext
+2024	carbon aggregator - pickle
+8080	Graphite internal gunicorn port (without Nginx proxying).
+8125	statsd
+8126	statsd admin

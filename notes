@@ -1,0 +1,3 @@
+# Best practices:
+- pin the image version and dont pull from latest - bugs prone
+- bind mount to host as persistent volumes
