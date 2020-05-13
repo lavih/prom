@@ -7,9 +7,9 @@ services:
       - "9090:9090"
     networks:
       - lavih
-      - host
-    volumes:
-      - prometheus:/etc/prometheus
+    volumes:      
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
   graphite:
     container_name: graphite
     image: graphiteapp/graphite-statsd
@@ -31,8 +31,13 @@ services:
       - "3000:3000"
     networks:
      - lavih
+    volumes:
+    - ./grafana/datasources:/etc/prometheus/
+    - ./grafana/datasources:/etc/prometheus/
+    - ./grafana/dashboards:/etc/prometheus/
+    - ./grafana/datasources:/etc/prometheus/
 networks:
   lavih:
-  host:
 volumes:
-  prometheus:
+  prometheus_data:
+
