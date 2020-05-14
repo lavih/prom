@@ -1,6 +1,0 @@
-FROM grafana/grafana
-
-COPY  grafana_datasource_graphite.yaml /usr/share/grafana/conf/provisioning/datasources
-COPY  grafana_datasource_prometheus.yaml /usr/share/grafana/conf/provisioning/datasources
-COPY  grafana_datasource_prometheus.yaml /etc/grafana/provisioning/datasources
-COPY grafana_datasource_graphite.yaml /etc/grafana/provisioning/datasources

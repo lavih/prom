@@ -1,2 +1,0 @@
-FROM prom/prometheus
-ENV PROMETHEUS_HOST=$(ip route show | awk '/default/ {print $3}')

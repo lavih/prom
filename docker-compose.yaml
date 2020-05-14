@@ -10,6 +10,8 @@ services:
     volumes:      
       - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
+    environment:
+     - PROMETHEUS_HOST=${PROMETHEUS_HOST}
   graphite:
     container_name: graphite
     image: graphiteapp/graphite-statsd

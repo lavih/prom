@@ -1,6 +1,0 @@
-FROM hopsoft/graphite-statsd
-
-COPY  monitor_system.sh /etc/run_once
-COPY  grafana_dashboard.json /var/lib/grafana/dashboards
-COPY  grafana.ini /etc/grafana
-

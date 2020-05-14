@@ -26,5 +26,6 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-    - targets: ['192.168.122.210:9100']
+#    - targets: ['192.168.122.210:9100']
+    - targets: !ENV ${PROMETHEUS_HOST}
 

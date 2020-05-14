@@ -2,3 +2,4 @@
 - pin the image version and dont pull from latest - bugs prone
 - bind mount to host as persistent volumes
 - the Graphite container runs more than pid 1 process
+- run as non-root user
