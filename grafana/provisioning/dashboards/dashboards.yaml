@@ -2,7 +2,7 @@
 apiVersion: 1
 providers:
  - name: 'VM_host_monitor'
-   folder: 'HOST'
+   folder: 'VM_HOST_MONITORING'
    type: file
    options:
      path: /etc/grafana/provisioning/dashboards/host_monitor

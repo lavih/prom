@@ -19,16 +19,15 @@
 
 
 #!/bin/bash
-MACHINENAME='ubntu16'
+MACHINENAME=ubuntu16
 
-# Download debian.iso
+# Download ubuntu.iso
 if [ ! -f ./ubuntu.iso ]; then
-    #wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.9.0-amd64-netinst.iso -O debian.iso
     wget https://releases.ubuntu.com/16.04/ubuntu-16.04.6-desktop-amd64.iso -O ubuntu.iso
 fi
 
 #Create VM
-VBoxManage createvm --name $MACHINENAME --ostype "Debian_64" --register --basefolder `pwd`
+VBoxManage createvm --name $MACHINENAME --ostype "Ubuntu_64" --register --basefolder `pwd`
 #Set memory and network
 VBoxManage modifyvm $MACHINENAME --ioapic on
 VBoxManage modifyvm $MACHINENAME --memory 1024 --vram 128
