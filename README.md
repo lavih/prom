@@ -8,6 +8,9 @@ Building a Prometheus-Graphite-Grafana monitoring stack that will monitor the ho
 
 ## Getting Started
 
+The following project goal is to Start a ubuntu based vm , run/install collectors on the vm and deploy on top of it a docker based stack of Prometheus-Graphite-Grafana
+in order to monitor the vm.
+
 ### Dependencies
 
 * Ubuntu 16.04
@@ -16,9 +19,13 @@ Building a Prometheus-Graphite-Grafana monitoring stack that will monitor the ho
 * VirtualBox with vboxmanage cli tool ver 5.2.34 - make sure the commands is executable via the user's PATH
 
 ### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* after we made sure we installed all the dependencies in the "Dependencies" section:
+* The project comes with prom.tar.gz compressed file, move it into the ubuntu vm
+* unzip:
+tar -xvzf prom.tar.gz
+* run/install collectors on vm
+sh ./prom/collectd/run_install_collectd.sh
+sh ./prom/node_exporter/run_node_exporter.sh
 
 ### Executing program
 
@@ -37,10 +44,9 @@ command to run if program contains helper info
 
 ## Authors
 
-Contributors names and contact info
+Lavih
+example@example.com
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 ## Version History
 
@@ -57,8 +63,17 @@ This project is licensed under the [NAME HERE] License - see the LICENSE.md file
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+# github repos
+*https://github.com/prometheus/prometheus
+*https://github.com/graphite-project
+*https://github.com/grafana/grafana
+
+#docs
+*https://graphiteapp.org/
+*https://grafana.com/
+*https://prometheus.io/
+
+# docker images
+*https://hub.docker.com/r/prom/prometheus
+*https://hub.docker.com/r/graphiteapp/graphite-statsd
+
