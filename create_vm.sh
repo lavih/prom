@@ -44,5 +44,9 @@ VBoxManage modifyvm $MACHINENAME --boot1 dvd --boot2 disk --boot3 none --boot4 n
 VBoxManage modifyvm $MACHINENAME --vrde on
 VBoxManage modifyvm $MACHINENAME --vrdemulticon on --vrdeport 10001
 VBoxManage modifyvm myserver --natpf1 "ssh,tcp,,3022,,22"
+
+# check vm ip
+VBoxManage guestproperty enumerate $MACHINENAME | grep IP
+
 #Start the VM
 VBoxHeadless --startvm $MACHINENAME
