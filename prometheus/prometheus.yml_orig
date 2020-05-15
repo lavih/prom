@@ -21,13 +21,10 @@ rule_files:
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: 'vm_target'
-    file_sd_configs:
-     - files:
-       - 'targets.json'
 
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
 
     static_configs:
 #    - targets: ['192.168.122.210:9100']
-#    - targets:  [$PROMETHEUS_HOST:9100]
+    - targets:  [$PROMETHEUS_HOST:9100]

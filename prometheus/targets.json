@@ -1,0 +1,10 @@
+[
+  {
+    "labels": {
+      "job": "vm_target"
+    },
+    "targets": [
+      "PROMETHEUS_HOST:9100"
+    ]
+  }
+]

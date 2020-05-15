@@ -1,0 +1,43 @@
+version: "3.8"
+services:
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - lavih
+    volumes:      
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+    environment:
+     - PROMETHEUS_HOST=${PROMETHEUS_HOST}
+    extra_hosts:
+     - 'PROMETHEUS_HOST:${PROMETHEUS_HOST}'
+  graphite:
+    container_name: graphite
+    image: graphiteapp/graphite-statsd
+    ports:
+      - "80:80"
+      - "81:81"
+      - "2003-2004:2003-2004"
+      - "2023-2024:2023-2024"
+      - "8125:8125"
+      - "8126:8126"
+    networks:
+      - lavih
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    networks:
+     - lavih
+    volumes:
+    - ./grafana/provisioning:/etc/grafana/provisioning/
+    - ./grafana/provisioning:/usr/share/grafana/conf/provisioning/
+networks:
+  lavih:
+volumes:
+  prometheus_data:
+
