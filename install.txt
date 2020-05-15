@@ -24,6 +24,11 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
+# install all dependencies:
+cd prom
+sh collectd/run_install_collectd.sh
+sh node_exporter/run_node_exporter.sh
+
 
 # run all:
 docker-compose -f docker-compose.yaml up -d
