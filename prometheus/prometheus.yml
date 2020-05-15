@@ -27,5 +27,4 @@ scrape_configs:
 
     static_configs:
 #    - targets: ['192.168.122.210:9100']
-    - targets: !ENV ${PROMETHEUS_HOST}
-
+    - targets:  [$PROMETHEUS_HOST:9100]
