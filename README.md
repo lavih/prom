@@ -26,11 +26,14 @@ in order to monitor the vm using Grafana Dashboards.
 * unzip:
 tar -xvzf prom.tar.gz
 * run/install collectors on vm - Make sure you run the shell scripts with sufficient permissions - the scripts need root permissions.
-cd prom
-sh collectd/run_install_collectd.sh
-sh node_exporter/run_node_exporter.sh
+* the scripts utilize relative path so make sure you run from inside the directory as shown below:
+cd prom/collectd
+sh run_install_collectd.sh
+cd ../node_exporter
+sh run_node_exporter.sh
 
 ### Executing the program ####
+* run from the prom directory:
 cd prom && docker-compose -f docker-compose.yaml up -d
 
 ### Access ####
