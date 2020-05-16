@@ -4,3 +4,4 @@
 - the Graphite container runs more than pid 1 process
 - run as non-root user
 - the deployment should be implemented using Ansible or other appropriate tool and not using ssh bulk
+- enter all the variables as ENV variables to keep the code dynamic
