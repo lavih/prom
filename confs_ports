@@ -25,9 +25,19 @@
 ############## image: Prometheus #################
 ##################################################
 ### conf files: ###
-/etc/prometheus=prometheus config
+/etc/prometheus/prometheus.yml=prometheus config
+/etc/prometheus/targets.json=monitored targets,alerts,threshholds
 #### ports: ###
-9090      prometheus dashboard
+9090  prometheus dashboard
 
+
+
+##################################################
+############## image: Grafana ####################
+##################################################
+### conf files: ###
+/etc/grafana/provisioning= grafana dashboards and datasources jsons
+#### ports: ###
+3000 Grafana dashboards
 
 
