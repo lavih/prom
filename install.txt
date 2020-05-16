@@ -1,15 +1,14 @@
-sudo apt-get update -y && sudo apt upgrade
-sudo apt install openssh-server
+sudo apt-get update -y 
+sudo apt upgrade -y
+sudo apt install openssh-server -y
 systemctl start ssh
 systemctl enable ssh
-sudo apt install git
-
-sudo apt install curl
+sudo apt install curl -y
 
 # install docker-ce
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install -y docker-ce
 sudo systemctl start docker && sudo systemctl enable docker
 # allow docker to run as non-root user
@@ -25,11 +24,12 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 # install all dependencies:
-cd prom
-sh collectd/run_install_collectd.sh
-sh node_exporter/run_node_exporter.sh
+cd prom/collectd
+sh run_install_collectd.sh
+cd ../node_exporter
+sh run_node_exporter.sh
 
 
-# run all:
+# set up docker stack:
 docker-compose -f docker-compose.yaml up -d
 
